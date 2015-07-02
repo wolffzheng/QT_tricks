@@ -1,0 +1,2 @@
+1.由文字--->数字
+spinBox_xxx->text().toInt()
