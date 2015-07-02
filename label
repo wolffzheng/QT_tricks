@@ -1,0 +1,8 @@
+1.在label中显示有限位数的数字
+double duration;
+duration=static_cast<double>(cv::getTickCount());	//getTickCount()得出现在的tick
+colorReduce(image,color_reduce_factor);			//所要运行的函数
+duration=static_cast<double>(cv::getTickCount())-duration;	//得出函数运行的时间,即tick数
+duration /= static_cast<double>(cv::getTickFrequency());	//将tick数转换成时间，getTickFeqency()返回每秒的tick数
+QString result=QString::number(duration,'f',5);			//设置成小数点后5位，这样label就能将数字全显示出来
+ui->label_render_time->setText(result);				//label设置数字
